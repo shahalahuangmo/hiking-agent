@@ -1,0 +1,59 @@
+[tool.poetry]
+name = "hikebutler"
+version = "0.1.0"
+description = "徒步私人管家 AI Agent - 基于 LangGraph 的智能徒步助手"
+authors = ["Your Name <your.email@example.com>"]
+readme = "README.md"
+packages = [{include = "hikebutler"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+langgraph = "^0.2.0"
+langchain = "^0.3.0"
+langchain-community = "^0.3.0"
+langsmith = "^0.1.0"
+chromadb = "^0.5.0"
+pymysql = "^1.1.0"
+cryptography = "^42.0.0"
+mem0ai = "^1.0.0"
+gradio = "^4.0.0"
+gpxpy = "^1.5.0"
+pyyaml = "^6.0.0"
+python-dotenv = "^1.0.0"
+openai = "^1.0.0"
+qwen-vl-sdk = "^1.0.0"
+pandas = "^2.0.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+pytest-cov = "^4.0.0"
+black = "^24.0.0"
+flake8 = "^7.0.0"
+mypy = "^1.8.0"
+
+[tool.black]
+line-length = 100
+target-version = ['py312']
+include = '\.pyi?$'
+
+[tool.flake8]
+max-line-length = 100
+extend-ignore = ["E203", "E266", "E501", "W503"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "--cov=hikebutler --cov-report=html --cov-report=term-missing"
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+

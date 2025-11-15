@@ -1,0 +1,58 @@
+# HikeButler 主配置文件
+
+# 应用配置
+app:
+  name: HikeButler
+  version: "0.1.0"
+  debug: false
+
+# LangGraph 配置
+langgraph:
+  max_iterations: 50
+  recursion_limit: 50
+
+# RAG 配置
+rag:
+  chunk_size: 500
+  chunk_overlap: 50
+  top_k: 5
+  similarity_threshold: 0.7
+
+# 数据库配置
+database:
+  mysql:
+    host: ${MYSQL_HOST}
+    port: ${MYSQL_PORT}
+    user: ${MYSQL_USER}
+    password: ${MYSQL_PASSWORD}
+    database: ${MYSQL_DATABASE}
+    pool_size: 5
+  chromadb:
+    path: ${CHROMA_DB_PATH}
+    collection_name: hiking_knowledge
+
+# Mem0 配置
+mem0:
+  api_key: ${MEM0_API_KEY}
+  user_id_field: user_id
+
+# LangSmith 配置
+langsmith:
+  api_key: ${LANGSMITH_API_KEY}
+  project: ${LANGSMITH_PROJECT}
+  tracing: ${LANGSMITH_TRACING}
+
+# MCP 工具配置
+mcp_tools:
+  windy:
+    enabled: true
+    api_key: ${WINDY_API_KEY}
+  xiaohongshu:
+    enabled: true
+    api_key: ${XHS_API_KEY}
+
+# 性能配置
+performance:
+  timeout: 5  # 秒
+  max_retries: 3
+

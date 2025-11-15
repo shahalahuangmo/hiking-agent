@@ -1,0 +1,16 @@
+# 模型配置
+# 支持通过修改此文件切换模型，无需修改代码
+
+llm:
+  provider: deepseek  # 可选: deepseek, qwen, openai
+  model_name: deepseek-chat
+  api_key: ${DEEPSEEK_API_KEY}
+  temperature: 0.7
+  max_tokens: 2000
+
+embedding:
+  provider: qwen  # 可选: qwen, deepseek, openai
+  model_name: text-embedding-v2
+  api_key: ${QWEN_API_KEY}
+  dimension: 1024
+
