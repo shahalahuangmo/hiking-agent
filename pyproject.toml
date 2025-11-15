@@ -21,8 +21,9 @@ gpxpy = "^1.5.0"
 pyyaml = "^6.0.0"
 python-dotenv = "^1.0.0"
 openai = "^1.0.0"
-qwen-vl-sdk = "^1.0.0"
 pandas = "^2.0.0"
+# Qwen SDK (optional, uncomment if needed)
+# dashscope = "^1.0.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.0.0"
